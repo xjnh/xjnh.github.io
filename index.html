@@ -3,11 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>任超 - B端产品专家</title>
+    <title>任超 - B端产品专家 | 企业数字化转型专家</title>
+    <!-- SEO元标签 -->
+    <meta name="description" content="任超，3年B端产品设计经验，专注企业级系统解决方案。提供AI智能体、财务共享系统等企业数字化服务。">
+    <meta name="keywords" content="B端产品, 数字化转型, 企业级系统, 产品设计, AI智能体, 财务共享系统">
+    <meta name="author" content="任超">
+    <!-- 预加载关键资源 -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>     
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f59e0b', // amber-500
+                    }
+                }
+            }
+        }
+    </script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- 自定义样式 -->
+    <style>
+        /* 滚动平滑 */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* 加载动画 */
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body class="bg-gray-900 text-gray-100 font-sans">
     <!-- 头部导航 -->
@@ -23,6 +56,19 @@
                 <a href="#projects" class="hover:text-amber-400 transition">项目案例</a>
                 <a href="#skills" class="hover:text-amber-400 transition">专业能力</a>
                 <a href="#contact" class="hover:text-amber-400 transition">联系方式</a>
+            </div>
+            <!-- 汉堡菜单按钮 -->
+            <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-800 mt-4 rounded-lg py-4 px-2 shadow-xl absolute left-4 right-4">
+            <div class="flex flex-col space-y-3">
+                <a href="#projects" class="hover:text-amber-400 transition px-4 py-2 rounded-lg hover:bg-gray-700">项目案例</a>
+                <a href="#skills" class="hover:text-amber-400 transition px-4 py-2 rounded-lg hover:bg-gray-700">专业能力</a>
+                <a href="#contact" class="hover:text-amber-400 transition px-4 py-2 rounded-lg hover:bg-gray-700">联系方式</a>
             </div>
         </div>
     </nav>
@@ -154,43 +200,186 @@
         <section id="projects" class="max-w-6xl mx-auto mb-20">
             <h2 class="text-3xl font-bold mb-12 text-center">项目案例</h2>
             <div class="grid md:grid-cols-2 gap-8">
-                <article class="bg-gray-800 rounded-xl overflow-hidden hover:shadow-xl transition">
-                    <img src="https://picsum.photos/600/400?random=2" 
-                         alt="AI智能体项目"
-                         class="w-full h-64 object-cover">
+                <article class="bg-gray-800 rounded-xl overflow-hidden hover:shadow-xl transition group">
+                    <div class="relative">
+                        <img src="https://picsum.photos/600/400?random=2" 
+                             alt="AI智能体项目"
+                             class="w-full h-64 object-cover transition group-hover:scale-105">
+                        <div class="absolute top-3 right-3 bg-amber-400 text-gray-900 px-3 py-1 rounded-full text-sm font-bold">
+                            2023年
+                        </div>
+                    </div>
                     <div class="p-8">
                         <h3 class="text-xl font-bold mb-4">AI智能体平台</h3>
-                        <p class="text-gray-400 mb-6">从0到1构建企业级AI解决方案...</p>
-                        <div class="flex space-x-4">
+                        <p class="text-gray-400 mb-6">从0到1构建企业级AI解决方案，实现自然语言处理与业务流程的深度整合，提升效率30%。</p>
+                        <div class="flex flex-wrap gap-2">
                             <span class="px-3 py-1 bg-amber-400/20 text-amber-400 rounded-full text-sm">Axure</span>
                             <span class="px-3 py-1 bg-amber-400/20 text-amber-400 rounded-full text-sm">Figma</span>
+                            <span class="px-3 py-1 bg-amber-400/20 text-amber-400 rounded-full text-sm">LLM</span>
                         </div>
                     </div>
                 </article>
-                <!-- 更多项目... -->
+                
+                <article class="bg-gray-800 rounded-xl overflow-hidden hover:shadow-xl transition group">
+                    <div class="relative">
+                        <img src="https://picsum.photos/600/400?random=3" 
+                             alt="财务共享系统"
+                             class="w-full h-64 object-cover transition group-hover:scale-105">
+                        <div class="absolute top-3 right-3 bg-amber-400 text-gray-900 px-3 py-1 rounded-full text-sm font-bold">
+                            2022年
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-4">企业财务共享系统</h3>
+                        <p class="text-gray-400 mb-6">为大型集团设计的财务共享服务平台，整合发票管理、预算控制、报销流程等多模块，减少财务人员40%工作量。</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-amber-400/20 text-amber-400 rounded-full text-sm">业务架构</span>
+                            <span class="px-3 py-1 bg-amber-400/20 text-amber-400 rounded-full text-sm">流程优化</span>
+                            <span class="px-3 py-1 bg-amber-400/20 text-amber-400 rounded-full text-sm">Axure</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="bg-gray-800 rounded-xl overflow-hidden hover:shadow-xl transition group">
+                    <div class="relative">
+                        <img src="https://picsum.photos/600/400?random=4" 
+                             alt="养老机构管理系统"
+                             class="w-full h-64 object-cover transition group-hover:scale-105">
+                        <div class="absolute top-3 right-3 bg-amber-400 text-gray-900 px-3 py-1 rounded-full text-sm font-bold">
+                            2022年
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-4">养老机构数字化平台</h3>
+                        <p class="text-gray-400 mb-6">为头部养老连锁机构打造的一体化管理平台，包含老人健康监测、护理计划、家属沟通等模块，覆盖20+机构。</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-amber-400/20 text-amber-400 rounded-full text-sm">用户研究</span>
+                            <span class="px-3 py-1 bg-amber-400/20 text-amber-400 rounded-full text-sm">PRD</span>
+                            <span class="px-3 py-1 bg-amber-400/20 text-amber-400 rounded-full text-sm">原型设计</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="bg-gray-800 rounded-xl overflow-hidden hover:shadow-xl transition group">
+                    <div class="relative">
+                        <img src="https://picsum.photos/600/400?random=5" 
+                             alt="数据分析平台"
+                             class="w-full h-64 object-cover transition group-hover:scale-105">
+                        <div class="absolute top-3 right-3 bg-amber-400 text-gray-900 px-3 py-1 rounded-full text-sm font-bold">
+                            2021年
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-4">企业数据分析平台</h3>
+                        <p class="text-gray-400 mb-6">结合BI工具打造的可视化数据分析平台，支持多维度数据钻取与自定义报表，帮助管理层快速做出决策。</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-amber-400/20 text-amber-400 rounded-full text-sm">Tableau</span>
+                            <span class="px-3 py-1 bg-amber-400/20 text-amber-400 rounded-full text-sm">SQL</span>
+                            <span class="px-3 py-1 bg-amber-400/20 text-amber-400 rounded-full text-sm">数据模型</span>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
 
         <!-- 联系方式 -->
         <section id="contact" class="max-w-6xl mx-auto">
             <div class="bg-gray-800 rounded-2xl p-8 md:p-12">
-                <div class="max-w-2xl mx-auto text-center">
-                    <h2 class="text-3xl font-bold mb-6">开启数字化之旅</h2>
-                    <p class="text-gray-400 mb-8">如果您有企业系统建设需求，欢迎随时联系</p>
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-center space-x-4">
-                            <i class="fas fa-phone text-amber-400"></i>
-                            <span>18535613326</span>
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold mb-6">开启数字化之旅</h2>
+                        <p class="text-gray-400 mb-2">如果您有企业系统建设需求，欢迎随时联系</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <!-- 联系信息 -->
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-full bg-amber-400/20 flex items-center justify-center">
+                                    <i class="fas fa-phone text-amber-400"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-400">电话</p>
+                                    <p class="font-medium">18535613326</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-full bg-amber-400/20 flex items-center justify-center">
+                                    <i class="fas fa-envelope text-amber-400"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-400">邮箱</p>
+                                    <p class="font-medium">2993888233@QQ.COM</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-full bg-amber-400/20 flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-amber-400"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-400">地区</p>
+                                    <p class="font-medium">北京市 · 海淀区</p>
+                                </div>
+                            </div>
+                            
+                            <!-- 社交媒体 -->
+                            <div class="pt-4">
+                                <p class="text-sm text-gray-400 mb-4">社交媒体</p>
+                                <div class="flex space-x-4">
+                                    <a href="#" class="w-10 h-10 rounded-full bg-amber-400/20 flex items-center justify-center hover:bg-amber-400 hover:text-gray-900 transition">
+                                        <i class="fab fa-weixin"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 rounded-full bg-amber-400/20 flex items-center justify-center hover:bg-amber-400 hover:text-gray-900 transition">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 rounded-full bg-amber-400/20 flex items-center justify-center hover:bg-amber-400 hover:text-gray-900 transition">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="flex items-center justify-center space-x-4">
-                            <i class="fas fa-envelope text-amber-400"></i>
-                            <span>2993888233@QQ.COM</span>
+                        
+                        <!-- 联系表单 -->
+                        <div class="bg-gray-700 p-6 rounded-xl">
+                            <h3 class="text-xl font-bold mb-4">发送消息</h3>
+                            <form class="space-y-4">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-400 mb-1">姓名</label>
+                                    <input type="text" id="name" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-400 mb-1">邮箱</label>
+                                    <input type="email" id="email" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400">
+                                </div>
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-400 mb-1">消息内容</label>
+                                    <textarea id="message" rows="4" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400"></textarea>
+                                </div>
+                                <button type="submit" class="w-full py-3 bg-amber-400 text-gray-900 font-medium rounded-lg hover:bg-amber-500 transition">发送消息</button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 py-8 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="mb-6">
+                <img src="https://picsum.photos/80/80?random=1" 
+                     alt="头像"
+                     class="w-16 h-16 rounded-full ring-2 ring-amber-400 mx-auto">
+            </div>
+            <p class="text-gray-400 mb-6">专注企业级产品设计 · 助力数字化转型</p>
+            <div class="text-sm text-gray-500">
+                © 2024 任超. 保留所有权利.
+            </div>
+        </div>
+    </footer>
 
     <script>
         // 平滑滚动
@@ -202,6 +391,56 @@
                 });
             });
         });
+        
+        // 移动端菜单控制
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            
+            // 切换图标
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+        
+        // 关闭移动菜单当点击链接
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+        
+        // 页面加载动画
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach((section, index) => {
+                // 添加淡入动画，递增延迟
+                section.classList.add('fade-in');
+                section.style.animationDelay = `${0.1 * index}s`;
+            });
+        });
+        
+        // 表单处理
+        const contactForm = document.querySelector('#contact form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                // 这里可以添加表单提交逻辑
+                alert('感谢您的消息！我会尽快回复。');
+                contactForm.reset();
+            });
+        }
     </script>
 </body>
 </html>
